@@ -7,6 +7,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use LightSaml\Helper;
 use LightSaml\Model\Assertion\Issuer;
 use LightSaml\Model\Assertion\NameID;
+use LightSaml\Model\Context\DeserializationContext;
 use LightSaml\Model\Protocol\LogoutRequest;
 use LightSaml\Model\Protocol\LogoutResponse;
 use LightSaml\SamlConstants;
