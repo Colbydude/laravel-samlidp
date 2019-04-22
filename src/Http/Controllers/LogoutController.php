@@ -24,11 +24,10 @@ class LogoutController extends Controller
                 return redirect(SamlSlo::dispatchNow($sp));
             }
         }
+
         $request->session()->forget('saml.slo');
 
         if ($request->has('RelayState')) {
-            $request->session()->invalidate();
-
             return redirect($request->input('RelayState'));
         }
 

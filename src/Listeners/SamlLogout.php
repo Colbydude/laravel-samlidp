@@ -15,6 +15,12 @@ class SamlLogout
      */
     public function handle(Logout $event)
     {
-        abort(redirect('saml/logout'), 200);
+        $request = request();
+
+        if ($request->has('RelayState')) {
+            abort(redirect('saml/logout?' . $request->getQueryString()), 200);
+        } else {
+            abort(redirect('saml/logout'), 200);
+        }
     }
 }
